@@ -1,12 +1,17 @@
 import React from 'react';
+
+/*Styles*/
 import './App.css';
-import { ListOfIndicators } from './components/listOfIndicators';
+import './globalStyles.css'
+
+/*Components */
+import { Machine } from './components/machine';
 
 
 function App() {
   return (
     <div>
-      <ListOfIndicators />
+      <Machine />
     </div>
     
   );

@@ -1,0 +1,31 @@
+/* RESET */
+
+h1,h2,h3,h4,h5,h6{
+  margin: 0;
+}
+
+:root{
+    /*PRIMARY COLORS*/
+    --main-bg-color: #e4e4e4;
+    --second-bg-color: #4980cc;
+    --main-text-color: #fff;
+    --second-text-color: #997859;
+    /*SECONDARY COLORS*/
+    --state-stoped-color: #e13e5b;
+    --state-moving-color: #278e06;
+    --rinde-humedo-color: #218119;
+    --rinde-seco-color: #b3d838;
+
+    /*INDICADORES*/
+    --breakpoint-0-color: #008000;
+    --breakpoint-1-color: #FFFF00;
+    --breakpoint-2-color: #FFA500;
+    --breakpoint-35-color: #FF0000;
+    --breakpoint-5-color: #8B0000;
+    --breakpoint-10-color: #8B0000;    
+}
+  
+  body{
+    font-family: 'Open Sans', sans-serif;
+}
+

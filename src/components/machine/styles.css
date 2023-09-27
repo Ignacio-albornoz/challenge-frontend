@@ -1,0 +1,28 @@
+.machine-container{
+    display: flex;
+    flex-direction: column;
+    margin: 18px;
+    margin-bottom: 24px;
+    border-radius: 8px;
+}
+
+.machine-header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+    
+}
+
+.machine-header-text{
+    display: flex;
+    flex-direction: column;
+    margin: 0 12px;
+
+}
+
+.machine-icon-state{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--state-moving-color);
+}
