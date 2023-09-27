@@ -5,13 +5,13 @@ import './App.css';
 import './globalStyles.css'
 
 /*Components */
-import { Machine } from './components/machine';
+import { ListOfMachines } from './components/list-of-machines';
 
 
 function App() {
   return (
     <div>
-      <Machine />
+      <ListOfMachines />
     </div>
     
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import './styles.css';
-import { ListOfIndicators } from "../list-of-machine";
+import { ListOfIndicators } from "../list-of-indicators";
 
 
 function Machine(machineDetails) {
@@ -35,29 +35,9 @@ function Machine(machineDetails) {
 
     const { id, description, company, indicadores } = machineDetails;
 
-    const indicators = [
-        {
-            title: 'Evaporazion',
-            content: 4
-        },
-        {
-            title: 'Perdida p. viento',
-            content: 0
-        },
-        {
-            title: 'Calidad',
-            content: 93
-        },
-        {
-            title: 'Rinde Humedo',
-            content: 8414
-        },
-    ]
-
-
     return(
-    <>
-        <div className="machine-container">
+    <li className="machine-container">
+        <div className="machine-card">
             <div className="machine-header">
                 <div className="machine-icon-state"></div>
                 <div className="machine-header-text">
@@ -71,7 +51,7 @@ function Machine(machineDetails) {
             </div>
             <ListOfIndicators indicators={indicadores}/>
         </div>
-    </>
+    </li>
 
     )
 }
