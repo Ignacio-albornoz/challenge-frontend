@@ -1,14 +1,17 @@
 import React from "react";
+import './styles.css';
+
 
 function Indicator({ title = 'Taponamiento', content = '2%'}) {
 
+
     return(
     <>
-        <div className="indicators-container">
-            <h4 className="indicators-title">
+        <div className="indicator-container">
+            <h5 className="indicator-title indicator-text">
                 {title}
-            </h4>
-            <h2 className="indicators-content">
+            </h5>
+            <h2 className="indicator-content indicator-text">
                 {content}
             </h2>
         </div>
