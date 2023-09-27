@@ -2,6 +2,12 @@
     background-color: var(--elements-bg-color);
     min-width: 316px;
     border-radius: 8px;
+    
+}
+
+.machine-container:hover{
+    transform: scale(1.005);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .machine-card{
