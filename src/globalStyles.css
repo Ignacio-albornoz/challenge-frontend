@@ -52,6 +52,18 @@ body{
 }
 
 /*MEDIA QUERY*/
+@media screen and (max-width: 480px) {
+  :root{
+    --very-hard: 8px;
+    --hard: 4px;
+    --medium: 4px;
+    --soft: 0px;
+    --very-soft: 0px;
+  }
+  body{
+    font-size: 10px;
+  }
+}
 
 @media screen and (min-width: 480px) {
   :root{

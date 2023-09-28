@@ -1,6 +1,6 @@
 .list_indicators-container{
     display: grid;
-    max-width: 240px;
+    max-width: 260px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: var(--margin-medium);
