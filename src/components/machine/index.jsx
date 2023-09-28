@@ -15,20 +15,20 @@ function Machine(machineDetails) {
         chassis: 33445,
         indicadores: [
             {
-                title: 'Evaporazion',
-                content: 4
+                description: 'calidad',
+                content: 0.2,
             },
             {
-                title: 'Perdida p. viento',
-                content: 0
+                description: 'calidad',
+                content: 0.1
             },
             {
-                title: 'Calidad',
-                content: 93
+                description: 'calidad',
+                content: 0,
             },
             {
-                title: 'Rinde Humedo',
-                content: 8414
+                description: 'calidad',
+                content: 0.4,
             },
         ],
     }
@@ -41,7 +41,7 @@ function Machine(machineDetails) {
             <div className="machine-header">
                 <div className="machine-icon-state"></div>
                 <div className="machine-header-text">
-                    <h6 className="machine-title machine-text">
+                    <h6 className="machine-description machine-text">
                         {`(${id}) ${description}`}
                     </h6>
                     <h6 className="machine-company machine-text">
