@@ -24,6 +24,20 @@ h1,h2,h3,h4,h5,h6{
     --breakpoint-35-color: #FF0000;
     --breakpoint-5-color: #8B0000;
     --breakpoint-10-color: #8B0000;    
+
+    /*MARGINS*/
+    --margin-very-hard: var(--very-hard);
+    --margin-hard: var(--hard);
+    --margin-medium: var(--medium);
+    --margin-soft: var(--soft);
+    --margin-very-soft: var(--very-soft);
+
+    /*PADDING*/
+    --padding-very-hard: var(--very-hard);
+    --padding-hard: var(--hard);
+    --padding-medium: var(--medium);
+    --padding-soft: var(--soft);
+    --padding-very-soft: var(--very-soft);
 }
 
 html{
@@ -35,5 +49,69 @@ body{
     font-family: 'Open Sans', sans-serif;
     background-color: var(--main-bg-color);
     
+}
+
+/*MEDIA QUERY*/
+
+@media screen and (min-width: 480px) {
+  :root{
+    --very-hard: 8px;
+    --hard: 4px;
+    --medium: 4px;
+    --soft: 0px;
+    --very-soft: 0px;
+  }
+  body{
+    font-size: 10px;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  :root{
+    --very-hard: 24px;
+    --hard: 12px;
+    --medium: 8px;
+    --soft: 4px;
+    --very-soft: 2px;
+  }
+  body{
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 880px) {
+  body{
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  :root{
+    --very-hard: 14px;
+    --hard: 12px;
+    --medium: 8px;
+    --soft: 4px;
+    --very-soft: 2px;
+  }
+  body{
+    font-size: 14px;
+  }
+}
+
+
+@media screen and (min-width: 1200px) {
+  :root{
+    font-size: 16px;
+    --very-hard:32px;
+    --hard: 16px;
+    --medium: 12px;
+    --soft: 8px;
+    --very-soft: 4px;
+  }
+
+  body{
+    font-size: 14px;
+  }
 }
 

@@ -1,22 +1,23 @@
 .indicator-container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     width: 100%;
     height: 100%;
     background-color: #008000;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-
 }
 
 .indicator-text{
     color: #fff;
     font-weight: 600;
-    margin: 8px;
+    margin: var(--margin-medium);
+    margin-bottom: var(--margin-very-soft);
 }
 
 .indicator-content{
-    font-size: 3rem;
-    margin: 0;
+    font-size: 1.6rem;
+    margin: var(--margin-medium);
+    margin-top: var(--margin-very-soft);
 }

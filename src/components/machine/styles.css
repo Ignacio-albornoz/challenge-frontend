@@ -7,27 +7,27 @@
 
 .machine-container:hover{
     transform: scale(1.005);
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .machine-card{
     display: flex;
     flex-direction: column;
-    margin: 18px;
+    margin: var(--margin-very-hard) var(--margin-hard);
 
 }
 
 .machine-header{
     display: flex;
     align-items: center;
-    margin-bottom: 18px;
+    margin-bottom: var(--margin-hard);
     
 }
 
 .machine-header-text{
     display: flex;
     flex-direction: column;
-    margin: 0 12px;
+    margin: 0 var(--margin-medium);
 
 }
 
