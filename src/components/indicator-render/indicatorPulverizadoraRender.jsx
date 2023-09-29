@@ -1,9 +1,11 @@
-import { usePulverizadoraIndicator } from "../../hooks/usePulverizadoraIndicator";
 import { indicatorPulverizadoraBreakpointsColors } from "../validations/breakpoints/indicatorPulverizadoraBreakpointsColors";
+import { usePulverizadoraIndicator } from "../../hooks/usePulverizadoraIndicator"
+
 
 export const IndicatorPulverizadoraRender = ({content, description}) => {
 
     const { calcularPorcentaje } = usePulverizadoraIndicator((content));
+    
 
     const breakpointColor = indicatorPulverizadoraBreakpointsColors(calcularPorcentaje(), description);
 

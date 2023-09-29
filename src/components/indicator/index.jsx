@@ -4,12 +4,14 @@ import { INDICATOR_TITLE_CALIDAD, INDICATOR_TITLE_CULTIVO, INDICATOR_TITLE_DERIV
 
 
 /* Components */
+/* Components */
 import { IndicatorRindeHumedoSecoRender } from '../indicator-render/indicatorRindeHumedoSecoRender';
-import { IndicatorCalidadRender } from '../indicator-render/indicatorCalidadRender';
-import { IndicatorPulverizadoraRender } from '../indicator-render/indicatorPulverizadoraRender';
-import { IndicatorCultivoRender } from '../indicator-render/indicatorCultivoRender';
+import { IndicatorCalidadRender } from '../indicator-render/IndicatorCalidadRender';
+import { IndicatorCultivoRender } from '../indicator-render/IndicatorCultivoRender';
 import { IndicatorHumedadGrano } from '../indicator-render/indicatorHumedadGrano';
 import { DefaultIndicator } from '../indicator-render/defaultIndicator';
+import { IndicatorPulverizadoraRender } from '../indicator-render/indicatorPulverizadoraRender';
+
 
 function Indicator({ description, content = '-'}) {
 
@@ -21,9 +23,10 @@ function Indicator({ description, content = '-'}) {
     const TITLE_RINDE_HUMEDO = INDICATOR_TITLE_RINDE_HUMEDO
     const TITLE_RINDE_SECO = INDICATOR_TITLE_RINDE_SECO
     const TITLE_CULTIVO = INDICATOR_TITLE_CULTIVO
+    
 
     return(
-    <>
+    <>  
         { description === TITLE_TAPONAMIENTO ? <IndicatorPulverizadoraRender content={content} description={description}/> : null}
         { description === TITLE_DERIVA ? <IndicatorPulverizadoraRender content={content} description={description}/> : null}
         { description === TITLE_EVAPORACION ? <IndicatorPulverizadoraRender content={content} description={description}/> : null}
