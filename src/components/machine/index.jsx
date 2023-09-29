@@ -15,8 +15,8 @@ function Machine(machineDetails) {
         chassis: 33445,
         indicadores: [
             {
-                description: 'calidad',
-                content: 0.2,
+                description: 'evaporacion',
+                content: 0.02,
             },
             {
                 description: 'calidad',

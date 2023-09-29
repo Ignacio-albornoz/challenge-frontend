@@ -5,7 +5,6 @@ export function useCalidad(valor) {
 
   const calcularPorcentaje = () => {
     let porcentaje;
-
     
     if (calidad === 0.00) {
       porcentaje = 100;
