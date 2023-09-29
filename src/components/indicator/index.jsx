@@ -13,7 +13,9 @@ import { DefaultIndicator } from '../indicator-render/defaultIndicator';
 import { IndicatorPulverizadoraRender } from '../indicator-render/indicatorPulverizadoraRender';
 
 
-function Indicator({ description, content = '-'}) {
+function Indicator({description, content}) {
+
+    console.log('description, content');
 
     const TITLE_CALIDAD = INDICATOR_TITLE_CALIDAD
     const TITLE_TAPONAMIENTO = INDICATOR_TITLE_TAPONAMIENTO
@@ -35,7 +37,7 @@ function Indicator({ description, content = '-'}) {
         { description === TITLE_CALIDAD ? <IndicatorCalidadRender content={content} description={description}/> : null }
         { description === TITLE_CULTIVO ? <IndicatorCultivoRender content={content} description={description}/> : null }
         { description === TITLE_HUMEDAD_GRANO ? <IndicatorHumedadGrano content={content} description={description}/> : null }
-        {description ? null : <DefaultIndicator />}
+        { description ? null : <DefaultIndicator />}
 
     </>
 

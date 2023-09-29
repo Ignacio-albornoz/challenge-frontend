@@ -5,58 +5,26 @@ import { MovementIndicator } from "../movement-indicator/movementIndicator";
 import './styles.css';
 
 
-function Machine(machineDetails) {
-
-    machineDetails = {
-        id: 12,
-        description: "Pulverizadora Demo",
-        working: true,
-        moving: false,
-        type: "Pulverizadora",
-        company: "Acronex",
-        chassis: 33445,
-        indicadores: [
-            {
-                description: 'evaporacion',
-                content: 0.02,
-            },
-            {
-                description: undefined,
-                content: 'Soja'
-            },
-            {
-                description: 'rinde_humedo',
-                content: 7000,
-            },
-            {
-                description: 'calidad',
-                content: 0.4,
-            },
-        ],
-    }
-    
-    const { id, description, company, moving, indicadores } = machineDetails;
-    
+function Machine(machine) {
     
     return(
-    <li className="machine-container">
-        <div className="machine-card">
-            <div className="machine-header">
-                <MovementIndicator moving={moving}/>
-                 <div className="machine-header-text">
-                    <h6 className="machine-description machine-text">
-                        {`(${id}) ${description}`}
-                    </h6>
-                    <h6 className="machine-company machine-text">
-                        {company}
-                    </h6>
+        <li className="machine-container">
+            <div className="machine-card">
+                <div className="machine-header">
+                    <MovementIndicator moving={machine.data.moving}/>
+                    <div className="machine-header-text">
+                        <h6 className="machine-description machine-text">
+                            {`(${machine.data.id}) ${machine.data.description}`}
+                        </h6>
+                        <h6 className="machine-company machine-text">
+                            {machine.data.company}
+                        </h6>
+                    </div>
                 </div>
+                <ListOfIndicators indicators={machine.data.indicadores}/>
             </div>
-            <ListOfIndicators indicators={indicadores}/>
-        </div>
-    </li>
-
-    )
+        </li>
+    )   
 }
 
 export { Machine };

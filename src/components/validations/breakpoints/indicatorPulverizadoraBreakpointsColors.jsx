@@ -6,10 +6,6 @@ export function indicatorPulverizadoraBreakpointsColors(porcentaje, description)
   const TITLE_TAPONAMIENTO = INDICATOR_TITLE_TAPONAMIENTO;
   const TITLE_DERIVA = INDICATOR_TITLE_DERIVA;
 
-  console.log(porcentaje);
-
-  console.log(description);
-
   if(description === TITLE_EVAPORACION || description === TITLE_DERIVA || description === TITLE_TAPONAMIENTO){
 
       if(porcentaje === 100) return 'breakpoint-0-color'

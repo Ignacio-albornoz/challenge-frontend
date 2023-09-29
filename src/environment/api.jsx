@@ -1,0 +1,1 @@
+export const URL_API = 'https://wrk.acronex.com/api/challenge/machines?q='

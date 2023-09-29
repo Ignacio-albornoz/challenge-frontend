@@ -3,15 +3,15 @@ import './styles.css';
 
 import { Indicator } from "../indicator";
 
-
-function ListOfIndicators({ indicators}) {
+function ListOfIndicators({indicators}) {
+    
 
     return(
     <>
-        <ul className="list_indicators-container">
-            {indicators.map((indicator, index) => (
-                <li key={index}>
-                    <Indicator description={indicator.description} content={indicator.content}/>
+        <ul className="list_indicators-container">  
+            {Object.entries(indicators).map(([key, value]) => (
+                <li>
+                    <Indicator description={key} content={value} />
                 </li>
             ))}
         </ul>

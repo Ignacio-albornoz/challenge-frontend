@@ -14,7 +14,6 @@ function Layout() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log( search );
 
         if(search.match(/^\d+$/)){
             //Si los caracteres son numericos, busco por id
