@@ -19,12 +19,12 @@ function Machine(machineDetails) {
                 content: 0.02,
             },
             {
-                description: 'calidad',
-                content: 0.1
+                description: undefined,
+                content: 'Soja'
             },
             {
-                description: 'calidad',
-                content: 0,
+                description: 'rinde_humedo',
+                content: 7000,
             },
             {
                 description: 'calidad',

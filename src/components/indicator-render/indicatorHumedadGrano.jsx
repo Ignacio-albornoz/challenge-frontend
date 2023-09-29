@@ -1,6 +1,4 @@
-export const IndicatorCosechadoraRender = ({content, description}) => {
-
-
+export const IndicatorHumedadGrano = ({content, description}) => {
 
     function convertDescriptionToRender(description) {
         const words = description.split("_");

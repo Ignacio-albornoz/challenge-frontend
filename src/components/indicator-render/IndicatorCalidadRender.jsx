@@ -12,10 +12,10 @@ export const IndicatorCalidadRender = ({content, description}) => {
     return(
         <>
             <div className={`indicator-container ${breakpointColor}`} >
-                <h5 className="indicator-calidad-description indicator-text">
+                <h5 className="indicator-description indicator-text">
                     Calidad
                 </h5>
-                <h2 className="indicator-calidad-content indicator-text">
+                <h2 className="indicator-content indicator-text">
                     {porcentaje} %
                 </h2>
             </div>
