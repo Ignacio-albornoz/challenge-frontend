@@ -30,10 +30,3 @@
     margin: 0 var(--margin-medium);
 
 }
-
-.machine-icon-state{
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background-color: var(--state-moving-color);
-}
