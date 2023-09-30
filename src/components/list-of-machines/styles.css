@@ -8,14 +8,17 @@
     padding: 0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     .list_machines-container{
         grid-template-columns: 1fr 1fr;
+        margin: 0 8px;
     }
 }
 
 @media screen and (max-width: 480px) {
     .list_machines-container{
         grid-template-columns: 1fr;
+        gap: 8px;
+        margin: 0 4px;
     }
 }

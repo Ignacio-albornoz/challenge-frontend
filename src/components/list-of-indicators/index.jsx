@@ -10,7 +10,7 @@ function ListOfIndicators({indicators}) {
     <>
         <ul className="list_indicators-container">  
             {Object.entries(indicators).map(([key, value]) => (
-                <li>
+                <li key={key}>
                     <Indicator description={key} content={value} />
                 </li>
             ))}

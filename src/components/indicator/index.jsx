@@ -15,8 +15,6 @@ import { IndicatorPulverizadoraRender } from '../indicator-render/indicatorPulve
 
 function Indicator({description, content}) {
 
-    console.log('description, content');
-
     const TITLE_CALIDAD = INDICATOR_TITLE_CALIDAD
     const TITLE_TAPONAMIENTO = INDICATOR_TITLE_TAPONAMIENTO
     const TITLE_DERIVA = INDICATOR_TITLE_DERIVA

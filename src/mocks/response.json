@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "description": "Pulverizadora Demo",
+        "working": false,
+        "moving": true,
+        "type": "Pulverizadora",
+        "company": "Acronex",
+        "chassis": 33445,
+        "indicadores": {
+            "evaporacion": 0.21,
+            "taponamiento": 0.55,
+            "deriva": 0.43,
+            "calidad": 0.23
+        }
+    },
+    {
+        "id": 2,
+        "description": "Agro Pulve 115",
+        "working": true,
+        "moving": false,
+        "type": "Pulverizadora",
+        "company": "Acronex",
+        "chassis": 75460,
+        "indicadores": {
+            "evaporacion": 0.31,
+            "taponamiento": 0.6,
+            "deriva": 0.21,
+            "calidad": 0.14
+        }
+    },
+    {
+        "id": 3,
+        "description": "Pulv. Brasil 1",
+        "working": false,
+        "moving": false,
+        "type": "Pulverizadora",
+        "company": "Acronex Brasil",
+        "chassis": 74505,
+        "indicadores": {
+            "evaporacion": 0.49,
+            "taponamiento": 0.35,
+            "deriva": 0.19,
+            "calidad": 0.29
+        }
+    },
+    {
+        "id": 4,
+        "description": "Pulv. Brasil 4",
+        "working": false,
+        "moving": true,
+        "type": "Pulverizadora",
+        "company": "Acronex Brasil",
+        "chassis": 38504,
+        "indicadores": {
+            "evaporacion": 0.33,
+            "taponamiento": 0.31,
+            "deriva": 0.66,
+            "calidad": 0.15
+        }
+    },
+    {
+        "id": 5,
+        "description": "Vassalli Demo 2",
+        "working": false,
+        "moving": false,
+        "type": "Cosechadora",
+        "company": "Acronex",
+        "chassis": 33354,
+        "indicadores": {
+            "cultivo": "Soja",
+            "humedad_grano": 8.81,
+            "rinde_humedo": 4822.33,
+            "rinde_seco": 3765.44
+        }
+    },
+    {
+        "id": 6,
+        "description": "Cosechadora Case 12",
+        "working": true,
+        "moving": true,
+        "type": "Cosechadora",
+        "company": "Acronex",
+        "chassis": 72450,
+        "indicadores": {
+            "cultivo": "Soja",
+            "humedad_grano": 11.08,
+            "rinde_humedo": 7698.34,
+            "rinde_seco": 3011.24
+        }
+    },
+    {
+        "id": 7,
+        "description": "Salta Pulv",
+        "working": true,
+        "moving": true,
+        "type": "Pulverizadora",
+        "company": "PLA S.A.",
+        "chassis": 30124,
+        "indicadores": {
+            "evaporacion": 0.29,
+            "taponamiento": 0.68,
+            "deriva": 0.37,
+            "calidad": 0.2
+        }
+    },
+    {
+        "id": 8,
+        "description": "PLA 76451",
+        "working": false,
+        "moving": false,
+        "type": "Pulverizadora",
+        "company": "PLA S.A.",
+        "chassis": 76451,
+        "indicadores": {
+            "evaporacion": 0.36,
+            "taponamiento": 0.54,
+            "deriva": 0.71,
+            "calidad": 0.36
+        }
+    },
+    {
+        "id": 9,
+        "description": "Demo Acronex Pulverizadora",
+        "working": false,
+        "moving": false,
+        "type": "Pulverizadora",
+        "company": "Acronex",
+        "chassis": 23555,
+        "indicadores": {
+            "evaporacion": 0.41,
+            "taponamiento": 0.14,
+            "deriva": 0.3,
+            "calidad": 0.31
+        }
+    },
+    {
+        "id": 10,
+        "description": "Demo Acronex Santa Fe",
+        "working": false,
+        "moving": false,
+        "type": "Pulverizadora",
+        "company": "PLA S.A.",
+        "chassis": "77845",
+        "indicadores": {
+            "evaporacion": 0.57,
+            "taponamiento": 0.62,
+            "deriva": 0.69,
+            "calidad": 0.17
+        }
+    },
+    {
+        "id": 11,
+        "description": "Pulve John Deere 457",
+        "working": true,
+        "moving": true,
+        "type": "Pulverizadora",
+        "company": "Acronex",
+        "chassis": "34461",
+        "indicadores": {
+            "evaporacion": 0.57,
+            "taponamiento": 0.25,
+            "deriva": 0.24,
+            "calidad": 0.29
+        }
+    },
+    {
+        "id": 12,
+        "description": "Cosechadora NH 6555A",
+        "working": true,
+        "moving": false,
+        "type": "Cosechadora",
+        "company": "Acronex",
+        "chassis": "37742",
+        "indicadores": {
+            "cultivo": "Soja",
+            "humedad_grano": 10.32,
+            "rinde_humedo": 7921.61,
+            "rinde_seco": 4464.31
+        }
+    }
+]
