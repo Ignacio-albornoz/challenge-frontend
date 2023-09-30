@@ -3,11 +3,13 @@ import { IndicatorCalidadBreakpointColor } from "../validations/breakpoints/Indi
 
 export const IndicatorCalidadRender = ({content, description}) => {
 
-    const { calcularPorcentaje } = useCalidad(parseFloat(content));
+    const { calidad, calcularPorcentaje } = useCalidad(parseFloat(content));
 
     const breakpointColor = IndicatorCalidadBreakpointColor(calcularPorcentaje(), description);
 
-    const porcentaje = parseInt(calcularPorcentaje());
+    const porcentaje = (calcularPorcentaje());
+
+
 
     return(
         <>
@@ -16,7 +18,7 @@ export const IndicatorCalidadRender = ({content, description}) => {
                     Calidad
                 </h5>
                 <h2 className="indicator-content indicator-text">
-                    {porcentaje} %
+                    {parseInt(calidad)} %
                 </h2>
             </div>
         </>

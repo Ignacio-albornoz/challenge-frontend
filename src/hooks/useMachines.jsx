@@ -3,21 +3,17 @@ import { searchMachines, getAllMachines } from '../services/machines'
 
 
 export function useMachines ({ search }) {
+
     const [ listMachines, setMachines ] = useState([])
     const [ loading, setLoading ] = useState([])
 
-    const getMachines = async () => {
+    const getListMachines = async () => {
         try{
+
             setLoading(true)
-            if(search === '' || !search){
-                const machines = await getAllMachines;
-                setMachines(machines);
-            }
-    
-            if(search !== ''){
-                const queryMachines = await searchMachines(search)
-                setMachines(queryMachines);
-            }
+            const machines = await getAllMachines();
+            setMachines(machines);
+            
         }
         catch(e){
 
@@ -29,5 +25,20 @@ export function useMachines ({ search }) {
         }
     }
 
-    return { listMachines, loading, getMachines }
+    const getMachines = async () => {
+        try{
+                const queryMachines = await searchMachines({search})
+                setMachines(queryMachines);
+        }
+        catch(e){
+
+            throw new Error(e.message)
+        }
+        finally{
+
+            setLoading(false)
+        }
+    }
+
+    return { machines: listMachines, loading, getMachines, getListMachines }
 }

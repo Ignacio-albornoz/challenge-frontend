@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+//TODO no se muestra el porcentaje correcto
+
 export function useCalidad(valor) {
   const [calidad, setCalidad] = useState(parseFloat(valor));
 
@@ -8,17 +10,20 @@ export function useCalidad(valor) {
     
     if (calidad === 0.00) {
       porcentaje = 100;
+      setCalidad(porcentaje)
       return porcentaje;
     } 
     
-    if (calidad === 1) {
+    if (calidad === 1.00) {
       porcentaje = 0;
+      setCalidad(porcentaje)
       return porcentaje;
     } 
     
-    if(calidad >= 0.1 && calidad < 0.9){
+    if(calidad >= 0.01 && calidad < 0.99){
 
-      porcentaje = (1 - valor) * 100;
+      porcentaje = parseFloat(1.00 - parseFloat(valor)) * 100;
+      setCalidad(porcentaje)
       return porcentaje;
     }
 

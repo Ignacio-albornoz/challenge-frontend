@@ -2,32 +2,25 @@ import React, { useEffect, useState } from "react";
 import './styles.css';
 
 import { Machine } from "../machine";
-import { getAllMachines } from "../../hooks/useMachines";
-
+import { useMachines } from "../../hooks/useMachines";
+import { URL_API } from "../../environment/api";
 
 
 function ListOfMachines() {
 
-    const { machines } = getAllMachines()
+    const [ search, setSearch ] = useState('')
+
+    const {machines, getListMachines, getMachines} = useMachines(search)
+
+    const API = URL_API
+
     const hasMachines = machines?.length > 0;
-
-    /* useEffect(() => {
-        const [ machines, setMachines ] = useState()
-        setMachines(ResultsJson)
-        
-        fetch(apiUrl)
-            .then(res => {
-
-                if(!res.ok){
-                    throw new Error('Error fetch')
-                }
-
-                return res.json()
-                
-            }).then(data => {
-                setMachines(data);
-            })
-    }, []) */
+    
+    useEffect(() => {
+     
+        getListMachines()
+   
+    }, [API])
 
     return(
     <>
