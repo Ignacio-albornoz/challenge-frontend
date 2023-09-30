@@ -1,26 +1,33 @@
 import React, { useEffect, useState } from "react";
-import './styles.css';
-
 import { Machine } from "../machine";
 import { useMachines } from "../../hooks/useMachines";
+
 import { URL_API } from "../../environment/api";
+//Json vercel problem
+import machinesJson from "../../mocks/response.json";
+
+
+import './styles.css';
 
 
 function ListOfMachines() {
 
-    const [ search, setSearch ] = useState('')
+    const machines = machinesJson
+    
+    const hasMachines = machines?.length > 0;
+
+   /*  const [ search, setSearch ] = useState('')
 
     const {machines, getListMachines, getMachines} = useMachines(search)
 
     const API = URL_API
 
-    const hasMachines = machines?.length > 0;
     
     useEffect(() => {
      
         getListMachines()
    
-    }, [API])
+    }, [API]) */
 
     return(
     <>
