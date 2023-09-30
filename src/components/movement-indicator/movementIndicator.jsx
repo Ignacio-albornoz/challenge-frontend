@@ -1,6 +1,6 @@
 import './styles.css';
 
-export function MovementIndicator(moving) {
+export function MovementIndicator({moving}) {
 
     const isMoving = moving ? 'machine-stopped' : 'machine-moving';
 
