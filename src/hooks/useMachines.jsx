@@ -31,11 +31,9 @@ export function useMachines (search) {
                 setMachines(queryMachines);
         }
         catch(e){
-
             throw new Error(e.message)
         }
         finally{
-
             setLoading(false)
         }
     }

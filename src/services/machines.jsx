@@ -34,17 +34,23 @@ export const searchMachines = async ( search ) => {
 
         const machines = await response.json();
 
-        return machines?.map( machine => ({
-            id: machine.id,
-            description: machine.description,
-            working: machine.working,
-            moving: machine.moving,
-            type: machine.type,
-            company: machine.company,
-            chassis: machine.chassis,
-            indicadores: machine.indicadores,
-        }))
+        if(machines.length > 0){
 
+        
+            return machines?.map( machine => ({
+                id: machine.id,
+                description: machine.description,
+                working: machine.working,
+                moving: machine.moving,
+                type: machine.type,
+                company: machine.company,
+                chassis: machine.chassis,
+                indicadores: machine.indicadores,
+            }))
+
+        }
+
+        return;
 
         /* const filterMachines = await machinesJson.filter( items => {
             return(
