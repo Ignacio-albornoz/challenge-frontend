@@ -2,10 +2,10 @@ import { URL_API } from "../environment/api"
 import machinesJson from '../mocks/response.json'
 
 export const getAllMachines = async () => {
-    const apiUrl = URL_API
+    const API_URL = URL_API
 
     try {
-        const response = await fetch(apiUrl);
+        const response = await fetch(API_URL);
         const machines = await response.json();
 
         return machines?.map( machine => ({
@@ -26,12 +26,18 @@ export const getAllMachines = async () => {
 }
 
 export const searchMachines = async ({ search }) => {
-    if(search === '') return null
 
+    console.log(search);
+
+    const API_URL = URL_API
     try {
-        /* 
+        
         const response = await fetch(`${API_URL}${search}`);
+        console.log(" Response: "+response);
+
         const machines = await response.json();
+
+        console.log("POST Response: "+machines);
 
         return machines?.map( machine => ({
             id: machine.id,
@@ -42,13 +48,18 @@ export const searchMachines = async ({ search }) => {
             company: machine.company,
             chassis: machine.chassis,
             indicadores: machine.indicadores,
-        })) */
+        }))
 
-        const m = machinesJson
 
-        return {machines: m}
+        /* const filterMachines = await machinesJson.filter( items => {
+            return(
+                items.description.toLowerCase().includes(search.toLowerCase())
+            )
+        })
+
+        return {filterMachines} */
     }
     catch (e){
-        throw new Error('')
+        throw new Error(e.message)
     }
 }

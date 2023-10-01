@@ -5,15 +5,15 @@ import './App.css';
 import './globalStyles.css'
 
 /*Components */
-import { ListOfMachines } from './components/list-of-machines';
 import { Layout } from './components/layout';
+import { Home } from './pages/home';
 
 
 function App() {
   return (
     <div>
       <Layout />
-      <ListOfMachines />
+      <Home />
     </div>
     
   );

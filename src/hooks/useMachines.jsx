@@ -28,6 +28,7 @@ export function useMachines ({ search }) {
     const getMachines = async () => {
         try{
                 const queryMachines = await searchMachines({search})
+                console.log("Query Machine: " + queryMachines);
                 setMachines(queryMachines);
         }
         catch(e){

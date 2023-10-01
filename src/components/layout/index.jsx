@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useMachines } from "../../hooks/useMachines";
 import './styles.css';
 
 const URL_LOGO_ACRONEX = "./logo-acronex.png"
@@ -9,7 +10,10 @@ const URL_LOGO_LOGIN = "./user.png"
 
 function Layout() {
 
+    
     const [ search, setSearch ] = useState('');
+
+    const {machines, getListMachines, getMachines} = useMachines({search})
 
 
     const handleSubmit = (event) => {
@@ -23,9 +27,11 @@ function Layout() {
     }
 
     const handleChange = (event) => {
-        setSearch(event.target.value);
-        //Llamados api por descripcion
-        //Filtrar lista de machines
+        const query = event.target.value;
+        setSearch(query);
+        getMachines()
+
+        console.log(machines);
     }
 
     return(

@@ -5,7 +5,7 @@ import { MovementIndicator } from "../movement-indicator/movementIndicator";
 import './styles.css';
 
 
-function Machine(machine) {
+export function Machine(machine) {
     
     return(
         <li className="machine-container">
@@ -26,5 +26,3 @@ function Machine(machine) {
         </li>
     )   
 }
-
-export { Machine };
