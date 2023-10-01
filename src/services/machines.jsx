@@ -30,8 +30,6 @@ export const searchMachines = async ( search ) => {
     const API_URL = URL_API
     try {
         
-        console.log(search);
-
         const response = await fetch(`${API_URL}${search}`);
 
         const machines = await response.json();
