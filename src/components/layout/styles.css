@@ -11,7 +11,7 @@
 .icon-wrap{
     display: inline-flex;
     align-items: center;
-    margin-left: var(--margin-hard);
+    margin: 0 8px;
 }
 
 .icon-wrap>img{
@@ -22,12 +22,6 @@
     height: 40px;
     width: 108px;
     margin-left: -8px;
-}
-
-@media screen and (min-width: 480px) {
-    .icon-unimap{
-        display: none;
-    }
 }
 
 .form-search-bar{
@@ -70,4 +64,10 @@
 
 .login-icon{
     width: 22px;
+}
+
+@media screen and (max-width: 480px) {
+    .icon-unimap{
+        display: none;
+    }
 }

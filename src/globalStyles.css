@@ -12,7 +12,7 @@ h1,h2,h3,h4,h5,h6{
     --main-text-color: #fff;
     --second-text-color:#3d3c3c;
 
-    /*SECONDARY COLORS*/
+    /*STATE COLORS*/
     --state-stopped-color: #e13e5b;
     --state-moving-color: #278e06;
     --rinde-humedo-color: #218119;
@@ -49,7 +49,6 @@ html{
 body{
     font-family: 'Open Sans', sans-serif;
     background-color: var(--main-bg-color);
-    
 }
 
 ul{
@@ -131,7 +130,5 @@ ul{
     font-size: 14px;
   }
   
-
-
 }
 

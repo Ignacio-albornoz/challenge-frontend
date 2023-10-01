@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { searchMachines, getAllMachines } from '../services/machines'
 
 
-export function useMachines ({ search }) {
+export function useMachines (search) {
 
     const [ listMachines, setMachines ] = useState([])
     const [ loading, setLoading ] = useState([])
@@ -27,8 +27,7 @@ export function useMachines ({ search }) {
 
     const getMachines = async () => {
         try{
-                const queryMachines = await searchMachines({search})
-                console.log("Query Machine: " + queryMachines);
+                const queryMachines = await searchMachines(search)
                 setMachines(queryMachines);
         }
         catch(e){

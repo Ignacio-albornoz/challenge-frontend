@@ -3,7 +3,7 @@ import { useState } from 'react';
 //TODO no se muestra el porcentaje correcto
 
 export function useCalidad(valor) {
-  const [calidad, setCalidad] = useState(parseFloat(valor));
+  const [calidad, setCalidad] = useState(valor);
 
   const calcularPorcentaje = () => {
     let porcentaje;

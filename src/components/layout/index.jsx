@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { SearchContext } from "../../context/search";
 import { useMachines } from "../../hooks/useMachines";
 import './styles.css';
 
@@ -10,11 +11,9 @@ const URL_LOGO_LOGIN = "./user.png"
 
 function Layout() {
 
-    
-    const [ search, setSearch ] = useState('');
+    const { search, setSearch } = useContext(SearchContext)
 
-    const {machines, getListMachines, getMachines} = useMachines({search})
-
+    const {machines, getMachines} = useMachines(search)
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -30,8 +29,6 @@ function Layout() {
         const query = event.target.value;
         setSearch(query);
         getMachines()
-
-        console.log(machines);
     }
 
     return(

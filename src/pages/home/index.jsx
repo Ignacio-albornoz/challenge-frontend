@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useContext } from "react";
+import { SearchContext } from "../../context/search";
 import { ListOfMachines } from "../../components/list-of-machines";
 import {useMachines} from "../../hooks/useMachines"
 import './styles.css';
@@ -9,28 +10,17 @@ import machinesJson from "../../mocks/response.json";
 
 export function Home() {
 
-    const machines = machinesJson
+    const { search } = useContext(SearchContext)
 
-    const [ search, setSearch ] = useState('')
-    
+    const { getMachines, machines} = useMachines(search)
+
     const hasMachines = machines?.length > 0;
-    
-    
-
-
-   /*  const [ search, setSearch ] = useState('')//Futuro context
-
-
-    
-    const API = URL_API
-    
-    const { getListMachines, machines} = useMachines(search)
     
     useEffect(() => {
      
-        getListMachines()
+        getMachines()
    
-    }, [API]) */
+    }, [search])
 
    
     return(
