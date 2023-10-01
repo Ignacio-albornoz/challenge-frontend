@@ -13,22 +13,20 @@ function Layout() {
 
     const { search, setSearch } = useContext(SearchContext)
 
-    const {machines, getMachines} = useMachines(search)
+    const {machines, searchMachines, searchMachineById} = useMachines(search)
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
         if(search.match(/^\d+$/)){
-            //Si los caracteres son numericos, busco por id
+            searchMachineById(search)
         }
 
-        //Busco por descripcion
     }
 
     const handleChange = (event) => {
         const query = event.target.value;
         setSearch(query);
-        getMachines()
     }
 
     return(

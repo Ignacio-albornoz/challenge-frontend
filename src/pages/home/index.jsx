@@ -12,22 +12,21 @@ export function Home() {
 
     const { search } = useContext(SearchContext)
 
-    const { getMachines, machines} = useMachines(search)
+    const { searchMachines, machines, loading} = useMachines(search)
 
     const hasMachines = machines?.length > 0;
     
     useEffect(() => {
      
-        getMachines()
+        searchMachines()
    
     }, [search])
 
    
     return(
     <>
-        {
-        hasMachines ?
-            <ListOfMachines machines={ machines } /> : <h1>Loading!</h1>
+        { 
+            hasMachines ? <ListOfMachines machines={ machines } /> : <h1>Lista vacia!</h1>
         }
     </>
 

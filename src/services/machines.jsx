@@ -1,11 +1,10 @@
-import { URL_API } from "../environment/api"
+import { URL_API, URL_API_QUERY } from "../environment/api"
 import machinesJson from '../mocks/response.json'
 
 export const getAllMachines = async () => {
-    const API_URL = URL_API
 
     try {
-        const response = await fetch(API_URL);
+        const response = await fetch(URL_API_QUERY);
         const machines = await response.json();
 
         return machines?.map( machine => ({
@@ -25,12 +24,11 @@ export const getAllMachines = async () => {
     }
 }
 
-export const searchMachines = async ( search ) => {
+export const getMachines = async ( search ) => {
 
-    const API_URL = URL_API
     try {
         
-        const response = await fetch(`${API_URL}${search}`);
+        const response = await fetch(`${URL_API_QUERY}${search}`);
 
         const machines = await response.json();
 
@@ -59,6 +57,38 @@ export const searchMachines = async ( search ) => {
         })
 
         return {filterMachines} */
+    }
+    catch (e){
+        throw new Error(e.message)
+    }
+
+}
+
+export const getMachineById = async ( search ) => {
+
+    try {
+        /* console.log(search);
+
+        const filterMachines = machinesJson.filter( items => items.id == search)
+
+        console.log(filterMachines);
+
+        return {filterMachines} */
+        
+        const response = await fetch(`${URL_API}/${search}`);
+
+        const machine = await response.json(); 
+        console.log(machine);
+
+        if(machine.length > 0){
+
+           return machine;
+
+        }
+
+        //redirect to home
+        return;
+
     }
     catch (e){
         throw new Error(e.message)

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { searchMachines, getAllMachines } from '../services/machines'
+import { getMachines, getAllMachines, getMachineById } from '../services/machines'
 
 
 export function useMachines (search) {
@@ -25,10 +25,15 @@ export function useMachines (search) {
         }
     }
 
-    const getMachines = async () => {
+    const searchMachines = async () => {
         try{
-                const queryMachines = await searchMachines(search)
+            setLoading(true)
+            const query = search;
+        
+            if(!query.match(/^\d+$/)){
+                const queryMachines = await getMachines(query)
                 setMachines(queryMachines);
+            }
         }
         catch(e){
             throw new Error(e.message)
@@ -38,5 +43,22 @@ export function useMachines (search) {
         }
     }
 
-    return { machines: listMachines, loading, getMachines, getListMachines }
+    const searchMachineById = async () => {
+        try{
+            setLoading(true)
+            console.log('GET ID');
+            const machine = await getMachineById(search)
+            setMachines(machine);
+
+        }
+        catch(e){
+            throw new Error(e.message)
+        }
+        finally{
+            setLoading(false)
+        }
+
+    }
+
+    return { machines: listMachines, loading, searchMachines, getListMachines, searchMachineById }
 }
