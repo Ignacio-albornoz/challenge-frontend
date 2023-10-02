@@ -5,15 +5,14 @@ import './App.css';
 import './globalStyles.css'
 
 /*Components */
-import { Layout } from './components/layout';
-import { Home } from './pages/home';
+
+import { MachinePage } from './pages/machine-page';
 
 
 function App() {
   return (
     <div>
-      <Layout />
-      <Home />
+      <MachinePage />
     </div>
     
   );
