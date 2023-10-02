@@ -36,6 +36,7 @@
 .information-title{
     width: 40%;
     font-size: 1rem;
+    margin: var(--margin-very-soft) auto;
 }
 
 .information-value{

@@ -1,15 +1,19 @@
 import React, { useContext } from "react";
+import { Link, useNavigate} from "react-router-dom";
 import { SearchContext } from "../../context/search";
 import { useMachines } from "../../hooks/useMachines";
+
 import './styles.css';
 
-const URL_LOGO_ACRONEX = "./logo-acronex.png"
-const URL_LOGO_UNIMAP = "./unimap_blanco.svg"
-const URL_LOGO_SEARCH = "./search.png"
-const URL_LOGO_LOGIN = "./user.png"
+import URL_LOGO_ACRONEX from "../../assets/logo-acronex.png"
+import URL_LOGO_UNIMAP from "../../assets/unimap_blanco.svg"
+import URL_LOGO_SEARCH from "../../assets/search.png"
+import URL_LOGO_LOGIN from "../../assets/user.png"
 
 
 function Layout() {
+
+    const navigate = useNavigate()
 
     const { search, setSearch } = useContext(SearchContext)
 
@@ -19,9 +23,8 @@ function Layout() {
         event.preventDefault();
 
         if(search.match(/^\d+$/)){
-            searchMachineById(search)
+            navigate(`/machine/${search}`)
         }
-
     }
 
     const handleChange = (event) => {
@@ -33,8 +36,10 @@ function Layout() {
     <>
         <div className="layout-container">
             <div className="icon-wrap">
-                <img src={URL_LOGO_ACRONEX} alt="logo acronex" />
-                <img className="icon-unimap" src={URL_LOGO_UNIMAP} alt="unimap logo blanco" />
+                <Link to={"/"}>
+                    <img src={URL_LOGO_ACRONEX} alt="logo acronex" />
+                    <img className="icon-unimap" src={URL_LOGO_UNIMAP} alt="unimap logo blanco" />
+                </Link>
             </div>
             <form onSubmit={handleSubmit} className="form-search-bar" >
                 <input 

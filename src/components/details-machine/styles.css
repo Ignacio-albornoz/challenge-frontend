@@ -1,4 +1,4 @@
-.details-content{
+.details-machine-content{
     width: calc(40% - 48px);
     justify-content: flex-start;
     display: flex;
@@ -6,13 +6,13 @@
 }
 
 
-.details-wrap{
+.details-machine-wrap{
     display: flex;
     flex-direction: column;
     margin: 24px 0;
 }
 
-.machine-details-indicators{
+.details-machine-indicators{
     &ul{
         margin: 0px;
     }
@@ -24,12 +24,12 @@
     margin: 8px 0;
 }
 
-.details-title{
+.details-machine-title{
     font-size: 1rem;
     margin-bottom: 4px;
 }
 
-.details-value{
+.details-machine-value{
     font-size: .8rem;
     font-weight: 400;
 }

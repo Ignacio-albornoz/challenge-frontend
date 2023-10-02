@@ -1,32 +1,49 @@
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { DetailsMachine } from "../../components/details-machine";
 import { InformationMachine } from "../../components/infomation-machine";
+import {useMachines} from "../../hooks/useMachines"
+
 import { MACHINE_TITLE_CLIMA, MACHINE_TITLE_GENERAL, MACHINE_TITLE_OPERACION } from "../../environment/machineTitles";
-import machineJson from "../../mocks/machine.json"
+
 
 import "./styles.css"
 
 
+
 export function MachinePage(){
 
-    const machine = machineJson;
+    const { id } = useParams();
 
-    console.log(machine);
+    const { searchMachineById, machine, loading} = useMachines(id);
+
+    useEffect(() => {
+     
+        searchMachineById();
+
+    }, [id])
+
+
 
     return(
-        <div className="machine-container">
-            <div className="machine-header">
-                <h2 className="description">{machine.description}</h2>
-                <h2 className="chassis">{machine.chassis}</h2>
-            </div>
-                <div className="machine-details-container">
-                    <DetailsMachine machine={machine}/>
-                    <div className="information-container">
-                        <InformationMachine title={MACHINE_TITLE_GENERAL} data={machine.data.general} />
-                        <InformationMachine title={MACHINE_TITLE_CLIMA} data={machine.data.cosecha} />
-                        <InformationMachine title={MACHINE_TITLE_OPERACION} data={machine.data.operación} />
-                    </div>
 
+        <div className="machine-page-container">
+            { machine ?
+            <div className="machine-details-card-container">
+                <div className="machine-page-header">
+                    <h2 className="machine-page-description">{machine.description}</h2>
+                    <h2 className="machine-page-chassis">{machine.chassis}</h2>
                 </div>
+                <div className="machine-page-details-container">
+                    <DetailsMachine machine={machine}/>
+                    <div className="machine-page-information-container">
+                        {machine.data.general ? <InformationMachine title={MACHINE_TITLE_GENERAL} data={machine.data.general} /> : null}
+                        {machine.data.clima ? <InformationMachine title={MACHINE_TITLE_CLIMA} data={machine.data.clima}/> : null}
+                       {machine.data.operación ? <InformationMachine title={MACHINE_TITLE_OPERACION} data={machine.data.operación} /> : null}
+                    </div>
+                </div>
+            </div> : <h1>Loading!</h1>
+            }
         </div>
     )
 }

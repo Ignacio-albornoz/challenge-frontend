@@ -67,7 +67,7 @@ export const getMachines = async ( search ) => {
 export const getMachineById = async ( search ) => {
 
     try {
-        /* console.log(search);
+        /*
 
         const filterMachines = machinesJson.filter( items => items.id == search)
 
@@ -77,17 +77,9 @@ export const getMachineById = async ( search ) => {
         
         const response = await fetch(`${URL_API}/${search}`);
 
-        const machine = await response.json(); 
-        console.log(machine);
+        const machine = await response.json();
 
-        if(machine.length > 0){
-
-           return machine;
-
-        }
-
-        //redirect to home
-        return;
+        return machine;
 
     }
     catch (e){

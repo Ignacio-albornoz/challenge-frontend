@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export function usePulverizadoraIndicator(valor) {
-  const [value, setValue] = useState(parseFloat(valor));
+  const [value, setValue] = useState(valor);
 
   const calcularPorcentaje = () => {
     const porcentaje = (value) * 100;

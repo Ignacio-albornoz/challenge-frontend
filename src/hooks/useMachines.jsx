@@ -5,7 +5,8 @@ import { getMachines, getAllMachines, getMachineById } from '../services/machine
 export function useMachines (search) {
 
     const [ listMachines, setMachines ] = useState([])
-    const [ loading, setLoading ] = useState([])
+    const [ machine, setMachine ] = useState(false)
+    const [ loading, setLoading ] = useState(false)
 
     const getListMachines = async () => {
         try{
@@ -46,10 +47,8 @@ export function useMachines (search) {
     const searchMachineById = async () => {
         try{
             setLoading(true)
-            console.log('GET ID');
             const machine = await getMachineById(search)
-            setMachines(machine);
-
+            setMachine(machine);
         }
         catch(e){
             throw new Error(e.message)
@@ -60,5 +59,5 @@ export function useMachines (search) {
 
     }
 
-    return { machines: listMachines, loading, searchMachines, getListMachines, searchMachineById }
+    return { machine,   machines: listMachines, loading, searchMachines, getListMachines, searchMachineById }
 }
