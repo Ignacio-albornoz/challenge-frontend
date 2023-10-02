@@ -3,7 +3,7 @@ import './styles.css';
 
 import { Indicator } from "../indicator";
 
-function ListOfIndicators({indicators}) {
+export function ListOfIndicators({indicators}) {
     
 
     return(
@@ -19,5 +19,3 @@ function ListOfIndicators({indicators}) {
 
     )
 }
-
-export { ListOfIndicators };
