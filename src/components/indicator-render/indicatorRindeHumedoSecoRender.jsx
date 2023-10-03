@@ -1,6 +1,8 @@
 import { indicatorRindeHumeSecoBreakpointsColors } from "../validations/breakpoints/indicatorRindeHumeSecoBreakpointsColors";
 import'./styles.css'
 
+/*Se encarga de renderizar el indicador rendimiento grano y formatea el titulo*/
+
 export const IndicatorRindeHumedoSecoRender = ({content, description}) => {
 
     function convertDescriptionToRender(description) {

@@ -3,9 +3,10 @@ import './styles.css';
 
 import { Indicator } from "../indicator";
 
+/**Mapea y renderiza objeto de indicadores recibidos por parametros */
+
 export function ListOfIndicators({indicators}) {
     
-
     return(
     <>
         <ul className="list_indicators-container">  

@@ -1,6 +1,8 @@
 import { URL_API, URL_API_QUERY } from "../environment/api"
 import toast from "react-hot-toast"
 
+/**Servicio que se encarga de hacer los llamados al API y manejar algunos errores en el llamado */
+
 export const getAllMachines = async () => {
 
     try {

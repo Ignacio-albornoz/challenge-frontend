@@ -1,13 +1,15 @@
 import { usePulverizadoraIndicator } from "../../hooks/usePulverizadoraIndicator";
 import { indicatorPulverizadoraBreakpointsColors } from "../validations/breakpoints/indicatorPulverizadoraBreakpointsColors";
 
+/*Se encarga de renderizar los indicadores que pertenecen a una pulverizadora, ademas de calcular el porcentaje y asignarle el estilo*/
+
 export const IndicatorPulverizadoraRender = ({content, description}) => {
 
-    const { calcularPorcentaje } = usePulverizadoraIndicator((content));
+    const { calcularPorcentaje } = usePulverizadoraIndicator(parseFloat(content));
 
-    const breakpointColor = indicatorPulverizadoraBreakpointsColors(parseFloat(content));
+    const breakpointColor = indicatorPulverizadoraBreakpointsColors(content);
 
-    const porcentaje = parseInt(calcularPorcentaje());
+    const porcentaje = calcularPorcentaje();
 
     return(
         <>
@@ -16,7 +18,7 @@ export const IndicatorPulverizadoraRender = ({content, description}) => {
                     {description.charAt(0).toUpperCase() + description.slice(1)}
                 </h5>
                 <h2 className="indicator-content indicator-text">
-                    {porcentaje} %
+                    {parseInt(porcentaje)} %
                 </h2>
             </div>
         </>

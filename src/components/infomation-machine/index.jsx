@@ -1,5 +1,10 @@
 import "./styles.css"
 
+/**Componente que renderiza la informacion de una maquina. 
+ * 
+ * Recibe por parametros un titulo y un objeto data, el cual mapea y muestra en un estilo de tabla
+ */
+
 export function InformationMachine({title, data}){
 
     return(

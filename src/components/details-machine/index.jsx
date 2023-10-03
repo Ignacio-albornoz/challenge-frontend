@@ -3,13 +3,13 @@ import { ListOfIndicators } from "../list-of-indicators";
 import { MovementIndicator } from "../movement-indicator/movementIndicator";
 import "./styles.css"
 
-/**Componente  */
+/**Componente que muestra informacion sobre una maquina, que recibe por parametros*/
 
 export function DetailsMachine ({machine}){
 
+    //Se formatea el string last_update en fecha con formato local
     const date = new Date(machine.last_update);
     const formattedDate = date.toLocaleString('es-AR');
-    console.log(formattedDate);
     
     return(
         <div className="details-machine-content">
@@ -31,7 +31,7 @@ export function DetailsMachine ({machine}){
             </div>
             <div className="details-machine-wrap">
                 <h4 className="details-machine-title last_update-title">{MACHINE_TITLE_ACTUALIZACION}</h4>
-                <h5 className="details-machine-value last_update-value">{machine.last_update}</h5>
+                <h5 className="details-machine-value last_update-value">{formattedDate}</h5>
             </div>
         </div>
     )

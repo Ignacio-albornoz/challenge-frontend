@@ -27,6 +27,10 @@
     border-bottom: 1px solid var( --main-bg-color);
 }
 
+.machine-page-chassis{
+    color: var(--second-title-color);
+}
+
 .machine-page-information-container{
     display: flex;
     flex-direction: column;

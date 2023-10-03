@@ -11,6 +11,7 @@ h1,h2,h3,h4,h5,h6{
     --elements-bg-color: #fff;
     --main-text-color: #fff;
     --second-text-color:#3d3c3c;
+    --second-title-color:#8a8888;
 
     /*STATE COLORS*/
     --state-stopped-color: #e13e5b;
@@ -25,7 +26,7 @@ h1,h2,h3,h4,h5,h6{
     --breakpoint-35-color: #FFA500;
     --breakpoint-2-color: #FF0000;
     --breakpoint-1-color: #8B0000;
-    --breakpoint-0-color: #8B0000;    
+    --breakpoint-0-color: #750000;    
 
     /*MARGINS*/
     --margin-very-hard: var(--very-hard);

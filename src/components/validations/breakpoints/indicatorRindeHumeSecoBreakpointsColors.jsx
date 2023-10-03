@@ -1,3 +1,6 @@
+/**Valida la descripcion recibida por parametros y devuelve un string, que en este caso pertenece a las clases que determinan el color de los indicadores */
+
+
 import { INDICATOR_TITLE_RINDE_HUMEDO, INDICATOR_TITLE_RINDE_SECO } from "../../../environment/indicatorsTitles";
 
 export function indicatorRindeHumeSecoBreakpointsColors(description) {

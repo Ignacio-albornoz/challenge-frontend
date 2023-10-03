@@ -1,5 +1,7 @@
 export const IndicatorCultivoRender = ({content}) => {
 
+    /*Se encarga de renderizar el indicador Cultivo*/
+
     const titleCultivoTuRender = 'Tipo Cultivo'
 
     return(

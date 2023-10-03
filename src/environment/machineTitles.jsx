@@ -1,3 +1,5 @@
+/* TITULOS DESCRIPCION MAQUINAS */
+
 export const MACHINE_TITLE_EMPRESA = "Empresa"
 export const MACHINE_TITLE_CLASE = "Clase"
 export const MACHINE_TITLE_ESTADO = "Estado"

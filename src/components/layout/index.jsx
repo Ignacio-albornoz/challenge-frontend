@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
-import { Link, useNavigate} from "react-router-dom";
+import { NavLink, useNavigate} from "react-router-dom";
 import { SearchContext } from "../../context/search";
-import { useMachines } from "../../hooks/useMachines";
 
 import './styles.css';
 
@@ -10,18 +9,29 @@ import URL_LOGO_UNIMAP from "../../assets/unimap_blanco.svg"
 import URL_LOGO_SEARCH from "../../assets/search.png"
 import URL_LOGO_LOGIN from "../../assets/user.png"
 
+/**Componente, layout que se renderiza en toda la apliacion 
+ * 
+ * Permite navegar al home desde los iconos y realizar busquedas en la barra de busqueda
+ * 
+ * Barra de busqueda: Al ingresar texto actualiza el contexto de la pagina.
+ *                    Al ingresar numeros, no actualiza el contexto.
+ * 
+ * Boton buscar: Si barra de busquedas tiene solo numeros, realiza un redireccionamieto a machines/id
+ * 
+*/
+
 
 function Layout() {
 
     const navigate = useNavigate()
 
+    //Se importa el contexto
     const { search, setSearch } = useContext(SearchContext)
 
-/*     const {machines, searchMachines, searchMachineById} = useMachines(search)
- */
     const handleSubmit = (event) => {
         event.preventDefault();
 
+        //Expresion regular que valida si el input es solo numeros
         if(search.match(/^\d+$/)){
             navigate(`/machine/${search}`)
             setSearch('')
@@ -37,10 +47,10 @@ function Layout() {
     <>
         <div className="layout-container">
             <div className="icon-wrap">
-                <Link to={"/"}>
+                <NavLink to={"/"} className={"icon-wrap"}>
                     <img src={URL_LOGO_ACRONEX} alt="logo acronex" />
                     <img className="icon-unimap" src={URL_LOGO_UNIMAP} alt="unimap logo blanco" />
-                </Link>
+                </NavLink>
             </div>
             <form onSubmit={handleSubmit} className="form-search-bar" >
                 <input 

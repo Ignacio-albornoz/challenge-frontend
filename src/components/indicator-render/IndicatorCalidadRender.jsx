@@ -1,17 +1,18 @@
+import React, {useEffect} from 'react';
 import { useCalidad } from "../../hooks/useCalidad"
+
 import { indicatorPulverizadoraBreakpointsColors } from "../validations/breakpoints/indicatorPulverizadoraBreakpointsColors";
 
-/*Se encarga de renderizar el indicador Calidad y de calcular el porcentaje*/
+/*Se encarga de renderizar el indicador Calidad, de calcular el porcentaje y asignarle el estilo*/
 
 export const IndicatorCalidadRender = ({content, description}) => {
 
-    const { calcularPorcentaje } = useCalidad(parseFloat(content));
+    const { calidad, calcularPorcentaje } = useCalidad(content);
 
-    console.log(parseFloat(content));
+    const porcentaje = calcularPorcentaje();
 
     const breakpointColor = indicatorPulverizadoraBreakpointsColors(parseFloat(content));
 
-    const porcentaje = (calcularPorcentaje());
 
     return(
         <>
@@ -20,7 +21,7 @@ export const IndicatorCalidadRender = ({content, description}) => {
                     {description.charAt(0).toUpperCase() + description.slice(1)}
                 </h5>
                 <h2 className="indicator-content indicator-text">
-                    {parseInt(porcentaje)} %
+                    {calidad ? parseInt(porcentaje) : '-'} %
                 </h2>
             </div>
         </>

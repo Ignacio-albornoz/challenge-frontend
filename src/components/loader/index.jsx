@@ -1,6 +1,8 @@
 import { CSSProperties } from 'react';
 import ClipLoader from "react-spinners/BarLoader";
 
+/**Loader */
+
 const override = CSSProperties = {
     display: "block",
     position: "absolute",

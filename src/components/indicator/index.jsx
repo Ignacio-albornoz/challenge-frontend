@@ -13,6 +13,14 @@ import { DefaultIndicator } from '../indicator-render/defaultIndicator';
 import { IndicatorPulverizadoraRender } from '../indicator-render/indicatorPulverizadoraRender';
 
 
+/**Componente que recibe una descripcion y un valor para renderizar un indicador. 
+ * 
+ * Cada indicador que se recibe tiene una forma de presentar la informacion de manera diferente,
+ * por eso se hacen multiples validaciones para determinar que valor se ingreso en el parametro
+ * 
+ * Las validaciones son muy especificas y se evito futuros problemas agregando constantes
+ */
+
 function Indicator({description, content}) {
 
     const TITLE_CALIDAD = INDICATOR_TITLE_CALIDAD

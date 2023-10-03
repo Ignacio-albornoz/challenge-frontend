@@ -5,6 +5,7 @@ import { MovementIndicator } from "../movement-indicator/movementIndicator";
 
 import './styles.css';
 
+/**Componente que renderiza la informacion minima requeria de una maquina, ademas redirige al detalle de la maquina seleccionada */
 
 export function Machine(machine) {
     
