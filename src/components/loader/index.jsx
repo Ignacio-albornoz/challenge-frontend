@@ -1,9 +1,9 @@
-import { CSSProperties } from 'react';
+import { React } from 'react';
 import ClipLoader from "react-spinners/BarLoader";
 
 /**Loader */
 
-const override = CSSProperties = {
+const override = React.CSSProperties = {
     display: "block",
     position: "absolute",
     left: "left: calc(50% - 100px)",
