@@ -2,13 +2,12 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { DetailsMachine } from "../../components/details-machine";
 import { InformationMachine } from "../../components/infomation-machine";
-import {useMachines} from "../../hooks/useMachines"
+import { useMachines } from "../../hooks/useMachines"
+import { Loader } from "../../components/loader";
 
 import { MACHINE_TITLE_CLIMA, MACHINE_TITLE_GENERAL, MACHINE_TITLE_OPERACION } from "../../environment/machineTitles";
 
-
 import "./styles.css"
-
 
 
 export function MachinePage(){
@@ -22,8 +21,6 @@ export function MachinePage(){
         searchMachineById();
 
     }, [id])
-
-
 
     return(
 
@@ -42,8 +39,10 @@ export function MachinePage(){
                         { machine.data.operación !== undefined | null? <InformationMachine title={MACHINE_TITLE_OPERACION} data={machine.data.operación} /> : null }
                     </div>
                 </div>
-            </div> : <h1>Loading!</h1>
-            }
+            </div> 
+            : 
+                <Loader loading={!loading} />
+            } 
         </div>
     )
 }

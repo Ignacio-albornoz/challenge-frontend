@@ -1,11 +1,14 @@
 import React, { useEffect, useContext } from "react";
 import { SearchContext } from "../../context/search";
 import { ListOfMachines } from "../../components/list-of-machines";
-import {useMachines} from "../../hooks/useMachines"
+import { useMachines } from "../../hooks/useMachines"
+
+
 import './styles.css';
 
 //Json vercel problem
 import machinesJson from "../../mocks/response.json";
+import { Loader } from "../../components/loader";
 
 
 export function Home() {
@@ -19,11 +22,11 @@ export function Home() {
     useEffect(() => {
      
         searchMachines()
-        const interval = setInterval(() => {
+        /* const interval = setInterval(() => {
             searchMachines()
         }, 40000);
         
-        return () => clearInterval(interval);
+        return () => clearInterval(interval); */
    
     }, [search])
 
@@ -31,7 +34,7 @@ export function Home() {
     return(
     <>
         { 
-            hasMachines ? <ListOfMachines machines={ machines } /> : <h1>Lista vacia!</h1>
+            hasMachines ? <ListOfMachines machines={ machines } /> : <Loader />
         }
     </>
 

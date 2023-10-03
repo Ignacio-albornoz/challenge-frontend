@@ -42,7 +42,7 @@ export function useMachines (search) {
 
         }
         catch(e){
-            throw new Error(e.message)
+            console.log(e.message);
         }
         finally{
             setLoading(false)
