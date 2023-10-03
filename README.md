@@ -21,14 +21,14 @@ ambos comandos inician la aplicacion en el puerto 3000
 #### Layout:
   Caputar el search del usuario, onChange evalua si es una cadena de texto y actualiza el contexto.
   
-  Si al capturar la busqueda, valida atraves de una expresion regular, si los caracteres son numericos. De serlo hace un redirect a /machine/ mas el ID ingresado
+  Si al capturar la busqueda, valida a traves de una expresion regular, si los caracteres son numericos. De serlo hace un redirect a /machine/ mas el ID ingresado
 
 #### Home:
   Esta pagina se encarga de renderizar la lista de maquinas que coincidan con la busqueda del usuario.
   
   Las maquinas brindadas por el hook useMachine
   
-  Los datos de busqueda llegan atraves del Context SearchContext
+  Los datos de busqueda llegan a traves del Context SearchContext
   
 
 #### Machine
