@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Challenge Frontend 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicacion creada con create-react-app.
 
-## Available Scripts
+Realizada con React, usando jsx y css
 
-In the project directory, you can run:
+
+# Para iniciar el proyecto
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### `npm dev`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ambos comandos inician la aplicacion en el puerto 3000
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Estructura APP:
 
-### `npm run build`
+### Paginas
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Layout:
+  Caputar el search del usuario, onChange evalua si es una cadena de texto y actualiza el contexto.
+  
+  Si al capturar la busqueda, valida a traves de una expresion regular, si los caracteres son numericos. De serlo hace un redirect a /machine/ mas el ID ingresado
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Home:
+  Esta pagina se encarga de renderizar la lista de maquinas que coincidan con la busqueda del usuario.
+  
+  Las maquinas brindadas por el hook useMachine
+  
+  Los datos de busqueda llegan a traves del Context SearchContext
+  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Machine
+  Se encarga de renderizar la informacion de una maquina
 
-### `npm run eject`
+  Recibe por parametros el ID de la maquina y solicita la informacion al hook useMachine
+  
+  En el caso de no existir la maquina con el ID ingresado, recibiremos un mensaje y nos redirige automaticamente al home
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Custom Hooks
+  UseMachine: Se encarga de llamar al servicio machine.jsx y hacer validaciones para que los componentes reciban la informacion que esperan, ademas de devolver el estado de "cargando"
+  
+  UseCalidad: Recibe un valor y lo convierte segun a %. Segun lo indicaba el enunciado del challenge
+  
+  UsePulverizadoraIndicator: Recibe el valor de un indicardor, referido a pulverizadora y lo multiplica para renderizarlo de la manera esperada
+  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Service
+  machine.jsx Hace los llamados a la api, en los diferentes endpoints. Controla errores y estados de las llamadas.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### Router
+  se instala react-router-dom, para manejar las rutas
 
-## Learn More
+#### Extras
+  react-spinner: barra de carga, para darle mejor feedback al usuario.
+  
+  react-host-toaster: aplicacion de notifiaciones, se usa para notificar errores en los querys, busquedas del usuario o errores externos en los llamados
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
