@@ -28,7 +28,7 @@ export function MachinePage(){
     return(
 
         <div className="machine-page-container">
-            { machine ?
+            { !loading && machine ?
             <div className="machine-details-card-container">
                 <div className="machine-page-header">
                     <h2 className="machine-page-description">{machine.description}</h2>
@@ -37,9 +37,9 @@ export function MachinePage(){
                 <div className="machine-page-details-container">
                     <DetailsMachine machine={machine}/>
                     <div className="machine-page-information-container">
-                        {machine.data.general ? <InformationMachine title={MACHINE_TITLE_GENERAL} data={machine.data.general} /> : null}
-                        {machine.data.clima ? <InformationMachine title={MACHINE_TITLE_CLIMA} data={machine.data.clima}/> : null}
-                       {machine.data.operación ? <InformationMachine title={MACHINE_TITLE_OPERACION} data={machine.data.operación} /> : null}
+                        { machine.data.general !== undefined | null? <InformationMachine title={MACHINE_TITLE_GENERAL} data={machine.data.general} /> : null }
+                        { machine.data.clima !== undefined | null? <InformationMachine title={MACHINE_TITLE_CLIMA} data={machine.data.clima}/> : null }
+                        { machine.data.operación !== undefined | null? <InformationMachine title={MACHINE_TITLE_OPERACION} data={machine.data.operación} /> : null }
                     </div>
                 </div>
             </div> : <h1>Loading!</h1>
