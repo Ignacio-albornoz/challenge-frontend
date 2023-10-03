@@ -3,10 +3,14 @@ import { ListOfIndicators } from "../list-of-indicators";
 import { MovementIndicator } from "../movement-indicator/movementIndicator";
 import "./styles.css"
 
+/**Componente  */
 
 export function DetailsMachine ({machine}){
-    
 
+    const date = new Date(machine.last_update);
+    const formattedDate = date.toLocaleString('es-AR');
+    console.log(formattedDate);
+    
     return(
         <div className="details-machine-content">
             <ListOfIndicators className="details-machine-indicators" indicators={machine.data.indicadores}/>

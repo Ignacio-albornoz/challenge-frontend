@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { getMachines, getAllMachines, getMachineById } from '../services/machines'
+import toast from "react-hot-toast"
+
 
 
 export function useMachines (search) {
@@ -22,7 +24,8 @@ export function useMachines (search) {
         }
         catch(e){
 
-            throw new Error(e.message)
+            toast.error(e.message)
+
         }
         finally{
 
@@ -37,15 +40,20 @@ export function useMachines (search) {
         
             if(!query.match(/^\d+$/)){
                 const queryMachines = await getMachines(query)
+
                 setMachines(queryMachines);
             }
 
         }
         catch(e){
-            console.log(e.message);
+
+            toast.error(e.message)
+
         }
         finally{
+
             setLoading(false)
+
         }
     }
 
@@ -65,7 +73,7 @@ export function useMachines (search) {
         }
         catch(e){
             
-            throw new Error(e.message)
+            toast.error(e.message)
             
         }
         finally{

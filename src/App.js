@@ -10,6 +10,7 @@ import './globalStyles.css'
 import { MachinePage } from './pages/machine-page';
 import { Home } from './pages/home'
 import { Layout } from './components/layout'
+import { Message } from './components/message';
 
 
 
@@ -19,6 +20,7 @@ function App() {
     <>
       <BrowserRouter>
         <Layout />
+        <Message />
         <Routes>
           <Route path='/' Component={Home} />
           <Route path='/machine/:id' Component={MachinePage} />

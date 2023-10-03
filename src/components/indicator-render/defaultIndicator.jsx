@@ -1,5 +1,6 @@
-export const DefaultIndicator = ({description, content}) => {
+/* Render de indicador default, en caso que no exista una descripcion del indicador*/ 
 
+export const DefaultIndicator = () => {
 
     return(
         <>

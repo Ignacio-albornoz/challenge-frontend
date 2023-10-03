@@ -1,4 +1,5 @@
 import { URL_API, URL_API_QUERY } from "../environment/api"
+import toast from "react-hot-toast"
 
 export const getAllMachines = async () => {
 
@@ -19,7 +20,7 @@ export const getAllMachines = async () => {
 
     }
     catch (e){
-        throw new Error('')
+        toast.error(e.message);
     }
 }
 
@@ -29,6 +30,16 @@ export const getMachines = async ( search ) => {
         
         const response = await fetch(`${URL_API_QUERY}${search}`);
 
+        if (response.status === 400) {
+            toast.error(`No se encontró la máquina con nombre: ${search}`);
+            return null;
+        }
+
+        if (!response.ok) {
+            toast.error(`Ocurrió un error al procesar la solicitud. Por favor, inténtelo de nuevo más tarde.`);
+            return null;
+        }
+        
         const machines = await response.json();
 
         if(machines.length > 0){
@@ -58,7 +69,7 @@ export const getMachines = async ( search ) => {
         return {filterMachines} */
     }
     catch (e){
-        throw new Error(e.message)
+        toast.error(e.message) 
     }
 
 }
@@ -66,25 +77,29 @@ export const getMachines = async ( search ) => {
 export const getMachineById = async ( search ) => {
 
     try {
-        /*
 
-        const filterMachines = machinesJson.filter( items => items.id == search)
-
-        console.log(filterMachines);
-
-        return {filterMachines} */
-        
         const response = await fetch(`${URL_API}/${search}`);
 
         const machine = await response.json();
+    
+        if (response.status === 404) {
+            toast.error(`No se encontró la máquina con id: ${search}`);
+            return null;
+        }
+    
+        if (response.status === 409) {
+            toast.error(`La solicitud no puede ser procesada debido a un conflicto con el estado actual del recurso.`);
+            return null;
+        }
 
         if(!response.ok){
+            toast.error(`No se encontro maquina con id: ${search} `)
             return null; 
         }
 
         return machine;
     }
     catch (e){
-        throw new Error(e.message)
+        toast.error(e.message)
     }
 }
