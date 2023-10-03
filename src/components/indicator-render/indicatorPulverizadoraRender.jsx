@@ -5,7 +5,7 @@ export const IndicatorPulverizadoraRender = ({content, description}) => {
 
     const { calcularPorcentaje } = usePulverizadoraIndicator((content));
 
-    const breakpointColor = indicatorPulverizadoraBreakpointsColors(calcularPorcentaje(), description);
+    const breakpointColor = indicatorPulverizadoraBreakpointsColors(parseFloat(content));
 
     const porcentaje = parseInt(calcularPorcentaje());
 
