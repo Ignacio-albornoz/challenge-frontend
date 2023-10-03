@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from "react-router-dom";
 import { getMachines, getAllMachines, getMachineById } from '../services/machines'
 
 
@@ -7,6 +8,9 @@ export function useMachines (search) {
     const [ listMachines, setMachines ] = useState([])
     const [ machine, setMachine ] = useState(false)
     const [ loading, setLoading ] = useState(false)
+
+    const navigate = useNavigate()
+
 
     const getListMachines = async () => {
         try{
@@ -35,6 +39,7 @@ export function useMachines (search) {
                 const queryMachines = await getMachines(query)
                 setMachines(queryMachines);
             }
+
         }
         catch(e){
             throw new Error(e.message)
@@ -48,10 +53,20 @@ export function useMachines (search) {
         try{
             setLoading(true)
             const machine = await getMachineById(search)
+
             setMachine(machine);
+
+            
+            if(machine === null){
+                navigate("/home")
+            }
+
+
         }
         catch(e){
+            
             throw new Error(e.message)
+            
         }
         finally{
             setLoading(false)

@@ -1,5 +1,4 @@
 import { URL_API, URL_API_QUERY } from "../environment/api"
-import machinesJson from '../mocks/response.json'
 
 export const getAllMachines = async () => {
 
@@ -79,8 +78,11 @@ export const getMachineById = async ( search ) => {
 
         const machine = await response.json();
 
-        return machine;
+        if(!response.ok){
+            return null; 
+        }
 
+        return machine;
     }
     catch (e){
         throw new Error(e.message)

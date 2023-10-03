@@ -17,13 +17,14 @@ function Layout() {
 
     const { search, setSearch } = useContext(SearchContext)
 
-    const {machines, searchMachines, searchMachineById} = useMachines(search)
-
+/*     const {machines, searchMachines, searchMachineById} = useMachines(search)
+ */
     const handleSubmit = (event) => {
         event.preventDefault();
 
         if(search.match(/^\d+$/)){
             navigate(`/machine/${search}`)
+            setSearch('')
         }
     }
 

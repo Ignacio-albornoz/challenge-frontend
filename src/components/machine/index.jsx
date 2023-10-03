@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { ListOfIndicators } from "../list-of-indicators";
 import { MovementIndicator } from "../movement-indicator/movementIndicator";
 
@@ -10,7 +10,7 @@ export function Machine(machine) {
     
     return(
         <li className="machine-card-container">
-            <Link to={`/machine/${machine.data.id}`}>
+            <NavLink to={`/machine/${machine.data.id}`} className={"machine-link"}>
                 <div className="machine-card">
                     <div className="machine-header">
                         <MovementIndicator moving={machine.data.moving}/>
@@ -25,7 +25,7 @@ export function Machine(machine) {
                     </div>
                     <ListOfIndicators indicators={machine.data.indicadores}/>
                 </div>
-            </Link>
+            </NavLink>
         </li>
     )   
 }

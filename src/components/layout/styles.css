@@ -11,17 +11,19 @@
 .icon-wrap{
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     margin: 0 8px;
 }
 
 .icon-wrap>img{
     display: inline-flex;
+
 }
 
 .icon-unimap{
     height: 40px;
     width: 108px;
-    margin-left: -8px;
+    margin-left: 8px;
 }
 
 .form-search-bar{

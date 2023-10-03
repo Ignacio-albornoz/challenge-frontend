@@ -19,6 +19,11 @@ export function Home() {
     useEffect(() => {
      
         searchMachines()
+        const interval = setInterval(() => {
+            searchMachines()
+        }, 40000);
+        
+        return () => clearInterval(interval);
    
     }, [search])
 
