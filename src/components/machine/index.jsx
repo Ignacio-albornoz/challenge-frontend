@@ -13,7 +13,7 @@ export function Machine(machine) {
         <li className="machine-card-container">
             <NavLink to={`/machine/${machine.data.id}`} className={"machine-link"}>
                 <div className="machine-card">
-                    <div className="machine-header">
+                    <hgroup className="machine-header">
                         <MovementIndicator moving={machine.data.moving}/>
                         <div className="machine-header-text">
                             <h4 className="machine-description machine-text">
@@ -23,7 +23,7 @@ export function Machine(machine) {
                                 {machine.data.company}
                             </h6>
                         </div>
-                    </div>
+                    </hgroup>
                     <ListOfIndicators indicators={machine.data.indicadores}/>
                 </div>
             </NavLink>

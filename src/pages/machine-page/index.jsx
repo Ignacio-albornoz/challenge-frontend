@@ -5,8 +5,6 @@ import { InformationMachine } from "../../components/infomation-machine";
 import { useMachines } from "../../hooks/useMachines"
 import { Loader } from "../../components/loader";
 
-import { MACHINE_TITLE_CLIMA, MACHINE_TITLE_GENERAL, MACHINE_TITLE_OPERACION } from "../../environment/machineTitles";
-
 import "./styles.css"
 
 
@@ -24,25 +22,27 @@ export function MachinePage(){
 
     return(
 
-        <div className="machine-page-container">
+        <main className="machine-page-container">
             { !loading && machine ?
-            <div className="machine-details-card-container">
-                <div className="machine-page-header">
+            <section className="machine-details-card-container">
+                <hgroup className="machine-page-header">
                     <h2 className="machine-page-description">{machine.description}</h2>
                     <h2 className="machine-page-chassis">{machine.chassis}</h2>
-                </div>
-                <div className="machine-page-details-container">
+                </hgroup>
+                <article className="machine-page-details-container">
                     <DetailsMachine machine={machine}/>
-                    <div className="machine-page-information-container">
-                        { machine.data.general !== undefined | null? <InformationMachine title={MACHINE_TITLE_GENERAL} data={machine.data.general} /> : null }
-                        { machine.data.clima !== undefined | null? <InformationMachine title={MACHINE_TITLE_CLIMA} data={machine.data.clima}/> : null }
-                        { machine.data.operación !== undefined | null? <InformationMachine title={MACHINE_TITLE_OPERACION} data={machine.data.operación} /> : null }
-                    </div>
-                </div>
-            </div> 
+                    <ul className="machine-page-information-container">  
+                        {Object.entries(machine.data).map(([key, value]) => (
+                            <li className="information-table" key={key}>
+                                <InformationMachine title={key} data={value} />
+                            </li>
+                        ))}
+                    </ul>
+                </article>
+            </section> 
             : 
                 <Loader loading={!loading} />
             } 
-        </div>
+        </main>
     )
 }

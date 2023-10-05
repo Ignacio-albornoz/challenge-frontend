@@ -31,7 +31,8 @@ export function DetailsMachine ({machine}){
             </div>
             <div className="details-machine-wrap">
                 <h4 className="details-machine-title last_update-title">{MACHINE_TITLE_ACTUALIZACION}</h4>
-                <h5 className="details-machine-value last_update-value">{formattedDate}</h5>
+                <time dateTime={date} className="details-machine-value last_update-value">{formattedDate}</time>
+                
             </div>
         </div>
     )

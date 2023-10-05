@@ -9,12 +9,12 @@ export function ListOfMachines( {machines} ) {
 
     return(
     <>
-        <ul className="list_machines-container">
+        <section className="list_machines-container">
             {
                 machines.map((machine) => (
                     <Machine key={machine.id} data={machine}/>
             ))}
-        </ul>
+        </section>
     </>
 
     )

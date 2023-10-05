@@ -41,7 +41,7 @@ ambos comandos inician la aplicacion en el puerto 3000
 #### Custom Hooks
   UseMachine: Se encarga de llamar al servicio machine.jsx y hacer validaciones para que los componentes reciban la informacion que esperan, ademas de devolver el estado de "cargando"
   
-  UseCalidad: Recibe un valor y lo convierte segun a %. Segun lo indicaba el enunciado del challenge
+  UseCalidad: Recibe un valor decimal y lo convierte al % requerido por el enunciado del challenge
   
   UsePulverizadoraIndicator: Recibe el valor de un indicardor, referido a pulverizadora y lo multiplica para renderizarlo de la manera esperada
   

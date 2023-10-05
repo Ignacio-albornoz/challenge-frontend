@@ -31,9 +31,11 @@ export function Home() {
    
     return(
     <>
-        { 
-            hasMachines ? <ListOfMachines machines={ machines } /> : <Loader />
-        }
+        <main>
+            { 
+                hasMachines ? <ListOfMachines machines={ machines } /> : <Loader />
+            }
+        </main>
     </>
 
     )

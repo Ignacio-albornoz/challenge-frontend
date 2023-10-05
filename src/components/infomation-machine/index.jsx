@@ -8,10 +8,10 @@ import "./styles.css"
 export function InformationMachine({title, data}){
 
     return(
-        <div className="information-table">
+        <>
             <div className="information-header">
                 <div className="information-title">
-                    <h4>{title}</h4>
+                    <h4>{title.charAt(0).toUpperCase() + title.slice(1)}</h4>
                 </div>
             </div>
             <ul className="information-content">
@@ -23,6 +23,6 @@ export function InformationMachine({title, data}){
                 ))}
                 
             </ul>
-        </div>                                               
+        </>                                               
     )
 }

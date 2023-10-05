@@ -45,7 +45,7 @@ function Layout() {
 
     return(
     <>
-        <div className="layout-container">
+        <header className="layout-container">
             <div className="icon-wrap">
                 <NavLink to={"/"} className={"icon-wrap"}>
                     <img src={URL_LOGO_ACRONEX} alt="logo acronex" />
@@ -71,7 +71,7 @@ function Layout() {
                     <img className="login-icon" src={URL_LOGO_LOGIN} alt="logo de usuario, para iniciar sesion" />
                 </button>
             </div>
-        </div>
+        </header>
     </>
 
     )
